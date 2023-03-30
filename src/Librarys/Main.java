@@ -1,8 +1,13 @@
 package Librarys;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
 
         Author author1 = new Author(1, "name");
         Author author2 = new Author(2, "name");
@@ -40,6 +45,10 @@ public class Main {
         library.removeAuthor(2);
         library.printAuthor(2);
         library.printAuthorBooks(2);
+        DateFormat format = new SimpleDateFormat("dd.MM.yyyy");
+
+        Person person = new Person(1,"bader");
+        person.addBook(book1,format.parse("01.09.2023"));
 
     }
 

@@ -11,17 +11,7 @@ public class Book {
     //CLASSIC,
     //HISTORICAL,
     //DETECTIVE
-    public static void main(String[] args) {
 
-
-        Map<String, String> books = new HashMap<>();
-        books.put("Шекспир","Ромео и Джульетта");
-        books.put("","Fantasy");
-        books.put("Братья Карамазовы","Достоевский");
-        books.put("Сунь-Цзы","Искусство воины");
-        books.put("Агата Кристи","Приключения Пуаро");
-
-    }
         //}
         int id;
         String genre;

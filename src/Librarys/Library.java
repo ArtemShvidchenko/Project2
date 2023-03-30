@@ -2,6 +2,7 @@ package Librarys;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 public class Library {
     ArrayList<Author> authors = new ArrayList<>();
@@ -101,12 +102,12 @@ public class Library {
         return 0;
     }
 
-    public Collection<Object> getAuthors() {
-        return null;
+    public List<Author> getAuthors() {
+        return authors;
     }
 
-    public Collection<Object> getBooks() {
-        return null;
+    public List<Book> getBooks() {
+        return books;
     }
 }
 
