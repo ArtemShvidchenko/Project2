@@ -8,6 +8,7 @@ public class Library {
     ArrayList<Author> authors = new ArrayList<>();
     ArrayList<Book> books = new ArrayList<>();
 
+
     public void addAuthor(Author author) {
         authors.add(author);
     }

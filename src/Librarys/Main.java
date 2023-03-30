@@ -1,6 +1,6 @@
 package Librarys;
 
-import org.w3c.dom.ls.LSOutput;
+
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,24 +13,10 @@ import java.util.Locale;
 
 public class Main {
 
+
     public static void main(String[] args) throws ParseException, IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Привет! Как тебя зовут?");
-        String name = br.readLine();
-        System.out.println("Введите дату в формате d. MMMM. yyyy");
 
-        String dateStr = br.readLine();
-
-        DateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
-        try {
-            Date returnbook = formatter.parse(dateStr);
-            DateFormat ruDateFormatter = new SimpleDateFormat("d MMMM yyyy",
-                    Locale.forLanguageTag("ru-RU"));
-
-
-        } catch (ParseException e) {
-            System.out.println("Некорректный формат даты: " + dateStr);
-        }
 
 
         Author author1 = new Author(1, "Шекспир");
@@ -80,9 +66,9 @@ public class Main {
         person.addBook(book2, format.parse("01.09.2023"));
         Person person3 = new Person(3, "");
         person.addBook(book3, format.parse("01.09.2023"));
-        System.out.println(person.addBook(book1,format.parse("01.09.2023")));
-
-
+        Person person4 = new Person(4, "");
+        person.addBook(book4, format.parse("01.09.2023"));
+        System.out.println();
 
     }
 }
