@@ -20,14 +20,14 @@ public class Library {
             }
         }
 
-        System.out.println("Author with id " + id + " is not found!");
+        System.out.println("Author with  " + id + " is not found!");
         System.out.println("----------------------");
     }
 
     public short printAuthor(int id) {
         for (Author author : authors) {
             if (author.id == id) {
-                System.out.println("Author with id " + id + " info.");
+                System.out.println("Author with " + id + " info.");
                 System.out.println("Name: " + author.name);
 
                 System.out.println("----------------------");
@@ -35,7 +35,7 @@ public class Library {
             }
         }
 
-        System.out.println("Author with id " + id + " is not found!");
+        System.out.println("Author with  " + id + " is not found!");
         System.out.println("----------------------");
         return 0;
     }
@@ -53,7 +53,7 @@ public class Library {
         }
 
         if (!isAuthorExist) {
-            System.out.println("Author with id " + id + " is not found!");
+            System.out.println("Author with  " + id + " is not found!");
             System.out.println("----------------------");
             return 0;
         }

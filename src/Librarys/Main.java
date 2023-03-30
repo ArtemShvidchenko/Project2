@@ -1,22 +1,47 @@
 package Librarys;
 
+import org.w3c.dom.ls.LSOutput;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class Main {
 
-    public static void main(String[] args) throws ParseException {
+    public static void main(String[] args) throws ParseException, IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Привет! Как тебя зовут?");
+        String name = br.readLine();
+        System.out.println("Введите дату в формате d. MMMM. yyyy");
 
-        Author author1 = new Author(1, "name");
-        Author author2 = new Author(2, "name");
-        Author author3 = new Author(3, "name");
+        String dateStr = br.readLine();
 
-        Book book1 = new Book("Classic", 1, " name author");
-        Book book2 = new Book("Historical", 2, " name author");
-        Book book3 = new Book("Detective", 3, " name author");
-        Book book4 = new Book("Fantasy", 4, " name author");
+        DateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
+        try {
+            Date returnbook = formatter.parse(dateStr);
+            DateFormat ruDateFormatter = new SimpleDateFormat("d MMMM yyyy",
+                    Locale.forLanguageTag("ru-RU"));
+
+
+        } catch (ParseException e) {
+            System.out.println("Некорректный формат даты: " + dateStr);
+        }
+
+
+        Author author1 = new Author(1, "Шекспир");
+        Author author2 = new Author(2, "Агата  Кристи");
+        Author author3 = new Author(3, " Сунь-Цзы");
+        Author author4 = new Author(4, " Джоан Роулинг");
+
+        Book book1 = new Book("Classic", 1, " Шекспир");
+        Book book2 = new Book("Detective", 2, "  Сунь-Цзы");
+        Book book3 = new Book("Historical", 3, " Агата  Кристи");
+        Book book4 = new Book("Fantasy", 4, " Джоан Роулинг");
 
         Library library = new Library();
 
@@ -45,11 +70,19 @@ public class Main {
         library.removeAuthor(2);
         library.printAuthor(2);
         library.printAuthorBooks(2);
-        DateFormat format = new SimpleDateFormat("dd.MM.yyyy");
 
-        Person person = new Person(1,"bader");
-        person.addBook(book1,format.parse("01.09.2023"));
+        DateFormat format = new SimpleDateFormat("dd.MM.yyyy");
+        Date date = format.parse("30.03.2023");
+
+        Person person = new Person(1, "bader");
+        person.addBook(book1, format.parse("01.09.2023"));
+        Person person2 = new Person(2, "");
+        person.addBook(book2, format.parse("01.09.2023"));
+        Person person3 = new Person(3, "");
+        person.addBook(book3, format.parse("01.09.2023"));
+        System.out.println(person.addBook(book1,format.parse("01.09.2023")));
+
+
 
     }
-
 }
