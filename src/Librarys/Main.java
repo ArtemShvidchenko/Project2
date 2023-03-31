@@ -34,6 +34,7 @@ public class Main {
         library.addAuthor(author1);
         library.addAuthor(author2);
         library.addAuthor(author3);
+        library.addAuthor(author4);
 
         library.addBook(book1);
         library.addBook(book2);
